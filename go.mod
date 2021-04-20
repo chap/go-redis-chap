@@ -1,6 +1,7 @@
 module github.com/go-redis/redis/example/otel
 
 go 1.14
+// +heroku goVersion go1.14
 
 require (
 	github.com/go-redis/redis/v8 v8.4.4
