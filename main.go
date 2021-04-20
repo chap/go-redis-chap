@@ -28,25 +28,25 @@ func main() {
 			opts.TLSConfig.InsecureSkipVerify = true
 		}
 		rdb := redis.NewClient(opts)
-		rdb.Set(ctx, "First value", "value_1", 0)
+		rdb.Set(ctx, "key_1", "value_1", 0)
 		
-		val1, err := rdb.Get(ctx, "value_1").Result()
+		val1, err := rdb.Get(ctx, "key_1").Result()
 		if err == redis.Nil {
-			log.Println("value_1 does not exist")
+			log.Println("key_1 does not exist")
 		} else if err != nil {
 			panic(err)
 		} else {
-			log.Println("value_1", val1)
+			log.Println("key_1", val1)
 		}
 
-		rdb.Set(ctx, "Second value", "value_2", 0)
-		val2, err := rdb.Get(ctx, "value_2").Result()
+		rdb.Set(ctx, "key_2", "value_2", 0)
+		val2, err := rdb.Get(ctx, "key_2").Result()
 		if err == redis.Nil {
-			log.Println("value_2 does not exist")
+			log.Println("key_2 does not exist")
 		} else if err != nil {
 			panic(err)
 		} else {
-			log.Println("value_2", val2)
+			log.Println("key_2", val2)
 		}
 	}
 }
