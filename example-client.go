@@ -32,10 +32,7 @@ func main() {
 			opts.TLSConfig.InsecureSkipVerify = true
 		}
 		rdb = redis.NewClient(opts)
+		rdb.Set(ctx, "First value", "value_1", 0)
+		rdb.Set(ctx, "Second value", "value_2", 0)
 	}
-
-
-	rdb.Set(ctx, "First value", "value_1", 0)
-
-	rdb.Set(ctx, "Second value", "value_2", 0)
 }
