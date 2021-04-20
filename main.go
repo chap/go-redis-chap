@@ -22,7 +22,7 @@ func main() {
 		return
 	} else {
 		opts.PoolSize = 35
-		opts.MinIdleConns = 35
+		opts.MinIdleConns = 3500
 		opts.ReadTimeout = 9 * time.Second
 		if opts.TLSConfig != nil {
 			opts.TLSConfig.InsecureSkipVerify = true
