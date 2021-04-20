@@ -1,4 +1,4 @@
-module main.go
+module github.com/chap/go-redis-chap
 
 go 1.15
 // +heroku goVersion go1.15
