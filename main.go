@@ -36,17 +36,17 @@ func main() {
 		} else if err != nil {
 			panic(err)
 		} else {
-			log.Println("value_1", val2)
+			log.Println("value_1", val1)
 		}
 
 		rdb.Set(ctx, "Second value", "value_2", 0)
 		val2, err := rdb.Get(ctx, "value_2").Result()
 		if err == redis.Nil {
-			fmt.Println("value_2 does not exist")
+			log.Println("value_2 does not exist")
 		} else if err != nil {
 			panic(err)
 		} else {
-			fmt.Println("value_2", val2)
+			log.Println("value_2", val2)
 		}
 	}
 }
