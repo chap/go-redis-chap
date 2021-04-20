@@ -3,14 +3,13 @@ package main
 import (
 	"context"
 	"log"
+	"time"
 	"github.com/go-redis/redis/v8"
+	"os"
 )
 
 func main() {
 	ctx := context.Background()
-
-	stop := runExporter(ctx)
-	defer stop(ctx)
 
 	// rdb := redis.NewClient(&redis.Options{
 	// 	Addr: ":6379",
